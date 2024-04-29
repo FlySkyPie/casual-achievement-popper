@@ -2,6 +2,9 @@
  * @credit https://codepen.io/uenify/pen/KxzKVd
  */
 import "./style.css";
+import iconUrl from "./github-mark-white.svg";
+
+document.querySelector<HTMLImageElement>(".xbox_img img")!.src = iconUrl;
 
 let achievementSound = new Audio(
   "https://dl.dropboxusercontent.com/s/8qvrpd69ua7wio8/XboxAchievement.mp3"
@@ -25,22 +28,36 @@ const achievement = () => {
   } else {
     achievementSound.play();
   }
-  document.querySelector<HTMLElement>(".circle")!.classList.add("circle_animate");
-  document.querySelector<HTMLElement>(".banner")!.classList.add("banner-animate");
-  document.querySelector<HTMLElement>(".achieve_disp")!.classList.add("achieve_disp_animate");
+  document
+    .querySelector<HTMLElement>(".circle")!
+    .classList.add("circle_animate");
+  document
+    .querySelector<HTMLElement>(".banner")!
+    .classList.add("banner-animate");
+  document
+    .querySelector<HTMLElement>(".achieve_disp")!
+    .classList.add("achieve_disp_animate");
   setTimeout(() => {
-    document.querySelector<HTMLElement>(".circle")!.classList.remove("circle_animate");
-    document.querySelector<HTMLElement>(".banner")!.classList.remove("banner-animate");
+    document
+      .querySelector<HTMLElement>(".circle")!
+      .classList.remove("circle_animate");
+    document
+      .querySelector<HTMLElement>(".banner")!
+      .classList.remove("banner-animate");
     document
       .querySelector<HTMLElement>(".achieve_disp")!
       .classList.remove("achieve_disp_animate");
     document.querySelector<HTMLButtonElement>("#a_trigger")!.disabled = false;
     if (rare) {
-      document.querySelector<HTMLElement>(".achievement")!.classList.remove("rare");
+      document
+        .querySelector<HTMLElement>(".achievement")!
+        .classList.remove("rare");
     }
   }, 12000);
 };
 
-document.querySelector<HTMLElement>("#a_trigger")!.addEventListener("click", () => {
-  achievement();
-});
+document
+  .querySelector<HTMLElement>("#a_trigger")!
+  .addEventListener("click", () => {
+    achievement();
+  });

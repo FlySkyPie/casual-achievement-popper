@@ -19,6 +19,10 @@ body {
   box-sizing: border-box;
 }
 
+#a_score {
+  display: none;
+}
+
 .content {
   height         : 100vh;
   display        : flex;
@@ -641,6 +645,8 @@ body {
   -ms-flex-align    : center;
   align-items       : center;
   height            : 24px;
+
+  display: none;
 }
 
 .gamerscore input {
@@ -658,6 +664,7 @@ body {
 }
 
 .hyphen_sep {
+  display     : none;
   margin-right: 5px;
   color       : white;
   font-size   : 15pt;
